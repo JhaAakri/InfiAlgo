@@ -182,13 +182,13 @@ const About = () => {
               className="animate_right relative mx-auto hidden aspect-[588/526.5] md:block md:w-1/2"
             >
               <Image
-                src="/images/about/about.png"
+                src="/images/about/1.webp"
                 alt="InfiAlgo Platform"
                 className="dark:hidden"
                 fill
               />
               <Image
-                src="/images/about/about.png"
+                src="/images/about/1.webp"
                 alt="InfiAlgo Platform"
                 className="hidden dark:block"
                 fill

@@ -2,7 +2,7 @@ export const marketEducationData = [
   {
     id: 1,
     title: "Forex Market Fundamentals",
-    image: "/images/markets/1.jpg",
+    image: "/images/markets/1.webp",
     description:
       "The foreign exchange market operates as the world’s largest financial marketplace, with daily trading volumes exceeding six trillion dollars.",
     points: [
@@ -14,7 +14,7 @@ export const marketEducationData = [
   {
     id: 2,
     title: "Comex Market Opportunities",
-    image: "/images/markets/2.jpg",
+    image: "/images/markets/22.webp",
     description:
       "Comex is the premier global venue for precious metals futures trading, serving as a benchmark for institutional participants worldwide.",
     points: [
