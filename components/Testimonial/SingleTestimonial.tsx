@@ -5,26 +5,38 @@ const SingleTestimonial = ({ review }: { review: Testimonial }) => {
   const { name, designation, image, content } = review;
 
   return (
-    <div className="rounded-lg bg-white p-9 pt-7.5 shadow-solid-9 dark:border dark:border-strokedark dark:bg-blacksection dark:shadow-none">
-      <div className="mb-7.5 flex items-center justify-between border-b border-stroke pb-6 dark:border-strokedark">
+    <div
+      className="
+        rounded-2xl
+        border border-white/10
+        bg-white/5 backdrop-blur-xl
+        p-8
+        transition
+        hover:border-cyan-400/40
+      "
+    >
+      {/* Header */}
+      <div className="mb-6 flex items-center justify-between border-b border-white/10 pb-5">
         <div>
-          <h3 className="mb-1.5 text-metatitle3 text-black dark:text-white">
+          <h3 className="mb-1 text-[16px] font-medium text-white">
             {name}
           </h3>
-          <p className="text-sm text-gray-600 dark:text-gray-400">
+          <p className="text-sm text-white/60">
             {designation}
           </p>
         </div>
+
         <Image
-          width={56}
-          height={56}
+          width={52}
+          height={52}
           src={image}
           alt={name}
-          className="rounded-full"
+          className="rounded-full object-cover"
         />
       </div>
 
-      <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
+      {/* Content */}
+      <p className="text-[15px] leading-[26px] text-white/70">
         “{content}”
       </p>
     </div>
