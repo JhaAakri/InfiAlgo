@@ -1,87 +1,85 @@
 "use client";
-import React from "react";
-import Image from "next/image";
+
 import { motion } from "framer-motion";
+import Image from "next/image";
+import Link from "next/link";
 
 const CTA = () => {
   return (
-    <>
-      {/* ===== CTA Start ===== */}
-      <section className="overflow-hidden px-4 py-20 md:px-8 lg:py-25 xl:py-30 2xl:px-0">
-        <div className="mx-auto max-w-c-1390 rounded-lg bg-linear-to-t from-[#F8F9FF] to-[#DEE7FF] px-7.5 py-12.5 dark:bg-blacksection dark:bg-linear-to-t dark:from-transparent dark:to-transparent dark:stroke-strokedark md:px-12.5 xl:px-17.5 xl:py-0">
-          <div className="flex flex-wrap gap-8 md:flex-nowrap md:items-center md:justify-between md:gap-0">
-            
-            {/* Left Content */}
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 1, delay: 0.1 }}
-              viewport={{ once: true }}
-              className="md:w-[70%] lg:w-1/2"
-            >
-              <h2 className="mb-4 w-11/12 text-3xl font-bold text-black dark:text-white xl:text-sectiontitle4">
-                Subscribe for Market Insights and Updates
-              </h2>
+    <section className="relative overflow-hidden bg-gradient-to-b from-[#020617] to-[#020b2a] px-4 py-20 sm:py-24">
+      
+      {/* Glow */}
+      <div className="pointer-events-none absolute inset-0 flex justify-center">
+        <div className="absolute top-1/2 h-[420px] w-[420px] rounded-full bg-cyan-500/10 blur-[140px]" />
+      </div>
 
-              <p className="mb-3 text-gray-700 dark:text-gray-300">
-                Stay informed about market conditions, trading strategies, and
-                platform enhancements. Our subscriber community receives weekly
-                market analysis, educational content, and early access to new
-                trading features.
-              </p>
+      <div className="relative z-10 mx-auto max-w-[1400px]">
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7 }}
+          viewport={{ once: true }}
+          className="
+            relative overflow-hidden rounded-3xl
+            border border-white/10
+            bg-white/5 backdrop-blur-xl
+            px-6 py-14
+            sm:px-10 sm:py-16
+            lg:px-16
+            flex flex-col lg:flex-row items-center gap-12
+          "
+        >
+          {/* LEFT CONTENT */}
+          <div className="max-w-xl text-center lg:text-left">
+            <h2 className="mb-4 text-[28px] sm:text-[34px] lg:text-[38px] font-semibold text-white leading-tight">
+              Get Market Insights
+              <br />
+              <span className="text-cyan-400">
+                Delivered Weekly
+              </span>
+            </h2>
 
-              <p className="text-gray-700 dark:text-gray-300">
-                Join thousands of traders who rely on InfiAlgo for professional
-                market insights delivered directly to their inbox.
-              </p>
-            </motion.div>
+            <p className="mb-6 text-[15px] sm:text-[16px] leading-[26px] text-white/70">
+              Stay ahead with professional market analysis, AI strategy updates,
+              and early access to new trading features — straight to your inbox.
+            </p>
 
-            {/* Right CTA */}
-            <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 1, delay: 0.1 }}
-              viewport={{ once: true }}
-              className="lg:w-[45%]"
-            >
-              <div className="flex items-center justify-end xl:justify-between">
-                
-                <Image
-                  width={299}
-                  height={299}
-                  src="/images/shape/shape-06.png"
-                  alt="Decorative Shape"
-                  className="hidden xl:block"
-                />
-
-                <a
-                  href="/subscribe"
-                  className="inline-flex items-center gap-2.5 rounded-full bg-black px-7 py-3.5 font-medium text-white transition-opacity hover:opacity-90 dark:bg-white dark:text-black"
-                >
-                  Subscribe Now
-                  <Image
-                    width={20}
-                    height={20}
-                    src="/images/icon/icon-arrow-dark.svg"
-                    alt="Arrow"
-                    className="dark:hidden"
-                  />
-                  <Image
-                    width={20}
-                    height={20}
-                    src="/images/icon/icon-arrow-light.svg"
-                    alt="Arrow"
-                    className="hidden dark:block"
-                  />
-                </a>
-              </div>
-            </motion.div>
-
+           
           </div>
-        </div>
-      </section>
-      {/* ===== CTA End ===== */}
-    </>
+
+          {/* RIGHT VISUAL */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            viewport={{ once: true }}
+            className="hidden lg:block relative w-[280px] h-[280px]"
+          >
+            <Image
+              src="/images/robo/sub.png"
+              alt="AI Insights"
+              fill
+              className="object-contain"
+            />
+          </motion.div>
+           <Link
+              href="/subscribe"
+              className="
+                inline-flex items-center gap-2
+                rounded-full
+                bg-gradient-to-r from-cyan-400 to-blue-500
+                px-6 py-3
+                text-sm font-medium text-black
+                shadow-[0_0_20px_rgba(56,189,248,0.6)]
+                hover:shadow-[0_0_30px_rgba(56,189,248,0.9)]
+                transition
+              "
+            >
+Subscribe Now <span className="ml-1">-&gt;</span>
+            </Link>
+        </motion.div>
+      </div>
+    </section>
   );
 };
 

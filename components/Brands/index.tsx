@@ -5,29 +5,38 @@ import brandData from "./brandData";
 
 const Brands = () => {
   return (
-    <section className="border border-x-0 border-y-stroke bg-alabaster py-14 dark:border-y-strokedark dark:bg-black overflow-hidden">
-      <div className="relative w-full overflow-hidden">
+    <section className="relative bg-gradient-to-b from-[#020617] via-[#020b2a] to-[#020617] py-14 overflow-hidden">
+      <div className="relative mx-auto max-w-[1400px] px-4">
 
-        <div
-          className="flex w-max items-center gap-16"
-          style={{ animation: "marquee 30s linear infinite" }}
-        >
-          {[...brandData, ...brandData].map((brand, index) => (
-            <SingleBrand brand={brand} key={index} />
-          ))}
+        {/* ===== Marquee Container ===== */}
+        <div className="relative w-full overflow-hidden">
+
+          {/* Edge fade */}
+          <div className="pointer-events-none absolute left-0 top-0 h-full w-24 bg-gradient-to-r from-[#0A0F1E] to-transparent z-10" />
+          <div className="pointer-events-none absolute right-0 top-0 h-full w-24 bg-gradient-to-l from-[#0A0F1E] to-transparent z-10" />
+
+          {/* Marquee */}
+          <div
+            className="flex w-max items-center gap-6"
+            style={{ animation: "marquee 35s linear infinite" }}
+          >
+            {[...brandData, ...brandData].map((brand, index) => (
+              <SingleBrand brand={brand} key={index} />
+            ))}
+          </div>
+
+          <style jsx>{`
+            @keyframes marquee {
+              0% {
+                transform: translateX(0%);
+              }
+              100% {
+                transform: translateX(-50%);
+              }
+            }
+          `}</style>
+
         </div>
-
-        <style jsx>{`
-          @keyframes marquee {
-            0% {
-              transform: translateX(0%);
-            }
-            100% {
-              transform: translateX(-50%);
-            }
-          }
-        `}</style>
-
       </div>
     </section>
   );

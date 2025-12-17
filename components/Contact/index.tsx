@@ -1,172 +1,151 @@
 "use client";
+
 import { motion } from "framer-motion";
-import Image from "next/image";
 import React from "react";
 
 const Contact = () => {
-  /**
-   * Fix rehydration error
-   */
-  const [hasMounted, setHasMounted] = React.useState(false);
-  React.useEffect(() => {
-    setHasMounted(true);
-  }, []);
-  if (!hasMounted) return null;
-
   return (
-    <>
-      {/* ===== Contact Start ===== */}
-      <section id="support" className="px-4 md:px-8 2xl:px-0">
-        <div className="relative mx-auto max-w-c-1390 px-7.5 pt-10 lg:px-15 lg:pt-15 xl:px-20 xl:pt-20">
+    <section
+      id="support"
+      className="relative overflow-hidden bg-gradient-to-b from-[#020617] to-[#020b2a] px-20 py-24 sm:py-28"
+    >
+      {/* Glow */}
+      <div className="pointer-events-none absolute inset-0 flex justify-center">
+        <div className="absolute top-1/2 h-[520px] w-[520px] rounded-full bg-cyan-500/10 blur-[160px]" />
+      </div>
 
-          {/* Background */}
-          <div className="absolute left-0 top-0 -z-1 h-2/3 w-full rounded-lg bg-linear-to-t from-transparent to-[#dee7ff47] dark:to-[#252A42]" />
-          <div className="absolute bottom-[-255px] left-0 -z-1 h-full w-full">
-            <Image
-              src="/images/shape/shape-dotted-light.svg"
-              alt="Dotted"
-              className="dark:hidden"
-              fill
-            />
-            <Image
-              src="/images/shape/shape-dotted-dark.svg"
-              alt="Dotted"
-              className="hidden dark:block"
-              fill
-            />
-          </div>
+      <div className="relative z-10 mx-auto max-w-[1400px]">
 
-          <div className="flex flex-col-reverse gap-8 md:flex-row md:justify-between xl:gap-20">
+        {/* Heading */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          className="mb-16 max-w-[720px]"
+        >
+          <h2 className="mb-4 text-[32px] sm:text-[40px] font-semibold text-white">
+            Get in Touch
+          </h2>
+          <p className="text-[16px] leading-[26px] text-white/70">
+            Have questions about our trading systems or need support?
+            Our team is ready to help you with professional guidance.
+          </p>
+        </motion.div>
 
-            {/* ===== Contact Form ===== */}
-            <motion.div
-              initial={{ opacity: 0, y: -20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1, delay: 0.1 }}
-              viewport={{ once: true }}
-              className="w-full rounded-lg bg-white p-7.5 shadow-solid-8 dark:border dark:border-strokedark dark:bg-black md:w-3/5 lg:w-3/4 xl:p-15"
-            >
-              <h2 className="mb-15 text-3xl font-semibold text-black dark:text-white xl:text-sectiontitle2">
-                Send a message
-              </h2>
+        <div className="grid gap-14 lg:grid-cols-[1.2fr_0.8fr]">
 
-              <form action="https://formbold.com/s/unique_form_id" method="POST">
-                <div className="mb-7.5 flex flex-col gap-7.5 lg:flex-row lg:gap-14">
-                  <input
-                    type="text"
-                    placeholder="Full name"
-                    className="w-full border-b border-stroke bg-transparent pb-3.5 focus-visible:outline-none dark:border-strokedark lg:w-1/2"
-                  />
-                  <input
-                    type="email"
-                    placeholder="Email address"
-                    className="w-full border-b border-stroke bg-transparent pb-3.5 focus-visible:outline-none dark:border-strokedark lg:w-1/2"
-                  />
-                </div>
+          {/* ===== FORM ===== */}
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7 }}
+            viewport={{ once: true }}
+            className="
+              rounded-3xl border border-white/10
+              bg-white/5 backdrop-blur-xl
+              p-6 sm:p-10
+            "
+          >
+            <h3 className="mb-8 text-[22px] font-medium text-white">
+              Send a message
+            </h3>
 
-                <div className="mb-12.5 flex flex-col gap-7.5 lg:flex-row lg:gap-14">
-                  <input
-                    type="text"
-                    placeholder="Subject"
-                    className="w-full border-b border-stroke bg-transparent pb-3.5 focus-visible:outline-none dark:border-strokedark lg:w-1/2"
-                  />
-                  <input
-                    type="text"
-                    placeholder="Phone number"
-                    className="w-full border-b border-stroke bg-transparent pb-3.5 focus-visible:outline-none dark:border-strokedark lg:w-1/2"
-                  />
-                </div>
-
-                <textarea
-                  placeholder="Message"
-                  rows={4}
-                  className="mb-11.5 w-full border-b border-stroke bg-transparent focus-visible:outline-none dark:border-strokedark"
-                />
-
-                <button
-                  className="inline-flex items-center gap-2.5 rounded-full bg-black px-6 py-3 font-medium text-white hover:bg-blackho dark:bg-btndark"
-                >
-                  Send Message
-                </button>
-              </form>
-            </motion.div>
-
-            {/* ===== Contact Information ===== */}
-            <motion.div
-              initial={{ opacity: 0, y: -20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1.5, delay: 0.1 }}
-              viewport={{ once: true }}
-              className="w-full md:w-2/5 lg:w-[26%] xl:pt-15"
-            >
-              <h2 className="mb-12.5 text-3xl font-semibold text-black dark:text-white xl:text-sectiontitle2">
-                Contact Information
-              </h2>
-
-              {/* Phone */}
-              <div className="mb-7">
-                <h3 className="mb-2 text-metatitle3 font-medium text-black dark:text-white">
-                  Phone / WhatsApp
-                </h3>
-                <p>
-                  <a
-                    href="https://wa.me/447418352452"
-                    className="hover:text-primary"
-                  >
-                    +44 7418 352452
-                  </a>
-                </p>
+            <form className="space-y-8">
+              <div className="grid gap-6 sm:grid-cols-2">
+                <input type="text" placeholder="Full name" className="input-ai" />
+                <input type="email" placeholder="Email address" className="input-ai" />
               </div>
 
-              {/* Email */}
-              <div className="mb-7">
-                <h3 className="mb-2 text-metatitle3 font-medium text-black dark:text-white">
-                  Email
-                </h3>
-                <p>
-                  <a
-                    href="mailto:support@infialgo.ai"
-                    className="hover:text-primary"
-                  >
-                    support@infialgo.ai
-                  </a>
-                </p>
+              <div className="grid gap-6 sm:grid-cols-2">
+                <input type="text" placeholder="Subject" className="input-ai" />
+                <input type="text" placeholder="Phone number" className="input-ai" />
               </div>
 
-              {/* Website */}
-              <div className="mb-7">
-                <h3 className="mb-2 text-metatitle3 font-medium text-black dark:text-white">
-                  Website
-                </h3>
-                <p>
-                  <a
-                    href="https://www.infiwealth.ai"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="hover:text-primary"
-                  >
-                    www.infiwealth.ai
-                  </a>
-                </p>
-              </div>
+              <textarea
+                rows={4}
+                placeholder="Your message"
+                className="input-ai resize-none"
+              />
 
-              {/* Address */}
+             <button
+  type="submit"
+  className="
+    inline-flex items-center justify-center
+    rounded-full
+    bg-gradient-to-r from-cyan-400 to-blue-500
+    px-7 py-3
+    text-sm font-medium text-black
+    shadow-[0_0_20px_rgba(56,189,248,0.6)]
+    hover:shadow-[0_0_30px_rgba(56,189,248,0.9)]
+    transition
+  "
+>
+  Send Message
+</button>
+
+            </form>
+          </motion.div>
+
+          {/* ===== INFO ===== */}
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.1 }}
+            viewport={{ once: true }}
+            className="
+              rounded-3xl border border-white/10
+              bg-white/5 backdrop-blur-xl
+              p-6 sm:p-10
+            "
+          >
+            <h3 className="mb-8 text-[22px] font-medium text-white">
+              Contact Information
+            </h3>
+
+            <div className="space-y-6 text-sm text-white/70">
               <div>
-                <h3 className="mb-2 text-metatitle3 font-medium text-black dark:text-white">
-                  Address
-                </h3>
+                <p className="mb-1 text-white font-medium">Phone / WhatsApp</p>
+                <a href="https://wa.me/447418352452" className="hover:text-cyan-400">
+                  +44 7418 352452
+                </a>
+              </div>
+
+              <div>
+                <p className="mb-1 text-white font-medium">Email</p>
+                <a href="mailto:support@infialgo.ai" className="hover:text-cyan-400">
+                  support@infialgo.ai
+                </a>
+              </div>
+
+              <div>
+                <p className="mb-1 text-white font-medium">Website</p>
+                <a
+                  href="https://www.infiwealth.ai"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-cyan-400"
+                >
+                  www.infiwealth.ai
+                </a>
+              </div>
+
+              <div>
+                <p className="mb-1 text-white font-medium">Address</p>
                 <p>
                   First Floor, 85 Great Portland Street<br />
                   London W1W 7LT<br />
                   United Kingdom
                 </p>
               </div>
-            </motion.div>
-          </div>
+            </div>
+          </motion.div>
+
         </div>
-      </section>
-      {/* ===== Contact End ===== */}
-    </>
+      </div>
+
+     
+    </section>
   );
 };
 

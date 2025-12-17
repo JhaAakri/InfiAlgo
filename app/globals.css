@@ -223,3 +223,22 @@ pre {
 .active-tab {
   @apply bg-stroke text-black dark:bg-blackho dark:text-white;
 }
+/* globals.css */
+
+.input-ai {
+  width: 100%;
+  background: transparent;
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+  padding: 10px 0;
+  color: white;
+  font-size: 14px;
+  outline: none;
+}
+
+.input-ai::placeholder {
+  color: rgba(255,255,255,0.5);
+}
+
+.input-ai:focus {
+  border-color: #22d3ee;
+}

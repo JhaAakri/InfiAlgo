@@ -1,139 +1,88 @@
 "use client";
-import React from "react";
-import Image from "next/image";
 import { motion } from "framer-motion";
 
 const FunFact = () => {
   return (
-    <>
-      {/* ===== Trust Indicators Start ===== */}
-      <section className="px-4 py-20 md:px-8 lg:py-22.5 2xl:px-0">
-        <div className="relative z-1 mx-auto max-w-c-1390 rounded-lg bg-linear-to-t from-[#F8F9FF] to-[#DEE7FF] py-22.5 dark:bg-blacksection dark:bg-linear-to-t dark:from-transparent dark:to-transparent dark:stroke-strokedark xl:py-27.5">
+    <section className="relative bg-gradient-to-b from-[#020617] via-[#020b2a] to-[#020617] py-24 lg:py-32">
+      <div className="mx-auto max-w-[1400px] px-4 sm:px-6 text-center">
 
-          {/* Decorative Shapes */}
-          <Image
-            width={335}
-            height={384}
-            src="/images/shape/trusted.png"
-            alt="Decorative Shape"
-            className="absolute -left-15 -top-25 -z-1 lg:left-0"
-          />
-          <Image
-            width={132}
-            height={132}
-            src="/images/shape/shape-05.png"
-            alt="Decorative Shape"
-            className="absolute bottom-0 right-0 -z-1"
-          />
+        {/* ===== Heading ===== */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          className="mx-auto mb-16 max-w-[760px]"
+        >
+          <h2 className="mb-4 text-[32px] sm:text-[40px] font-semibold text-white">
+            Trusted by <span className="text-cyan-400">80,000+</span> Companies Worldwide
+          </h2>
 
-          <Image
-            fill
-            src="/images/shape/shape-dotted-light-02.svg"
-            alt="Dotted Background"
-            className="absolute left-0 top-0 -z-1 dark:hidden"
-          />
-          <Image
-            fill
-            src="/images/shape/shape-dotted-dark-02.svg"
-            alt="Dotted Background"
-            className="absolute left-0 top-0 -z-1 hidden dark:block"
-          />
+          <h3 className="mb-5 text-[18px] sm:text-[20px] font-medium text-white">
+            Partnered With Industry-Leading Brokers
+          </h3>
 
-          {/* ===== Heading & Content ===== */}
+          <p className="text-[15px] sm:text-[16px] leading-[26px] text-white/70">
+            InfiAlgo collaborates with globally regulated, top-tier brokers to
+            ensure secure execution, competitive pricing, and institutional-grade
+            reliability across global markets.
+          </p>
+        </motion.div>
+
+        {/* ===== Trust Metrics ===== */}
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-12 max-w-[900px] mx-auto">
+
+          {/* Metric 1 */}
           <motion.div
-            variants={{
-              hidden: { opacity: 0, y: -20 },
-              visible: { opacity: 1, y: 0 },
-            }}
-            initial="hidden"
-            whileInView="visible"
-            transition={{ duration: 0.8, delay: 0.1 }}
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
             viewport={{ once: true }}
-            className="animate_top mx-auto mb-14 px-4 text-center md:w-4/5 md:px-0 lg:mb-18 lg:w-2/3 xl:w-1/2"
+            className="text-center"
           >
-            {/* Main SEO Heading */}
-            <h2 className="mb-3 text-3xl font-bold text-black dark:text-white xl:text-sectiontitle3">
-              Trusted by 80,000+ Companies Worldwide
-            </h2>
-
-            {/* Sub Heading */}
-            <h3 className="mb-4 text-xl font-semibold text-black dark:text-white">
-              Partnered With Industry-Leading Brokers
-            </h3>
-
-            {/* Short SEO-friendly Description */}
-            <p className="mx-auto text-lg text-gray-700 dark:text-gray-300">
-              InfiAlgo partners with top-tier, globally regulated brokers to
-              deliver reliable execution, competitive spreads, and secure fund
-              management for professional traders across global markets.
+            <h4 className="mb-2 text-[34px] font-semibold text-cyan-400">
+              Tier-1
+            </h4>
+            <p className="text-white/70 text-sm">
+              Broker Partnerships
             </p>
           </motion.div>
 
-          {/* ===== Trust Highlights ===== */}
-          <div className="flex flex-wrap justify-center gap-10 lg:gap-40">
+          {/* Metric 2 */}
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.25 }}
+            viewport={{ once: true }}
+            className="text-center"
+          >
+            <h4 className="mb-2 text-[34px] font-semibold text-cyan-400">
+              Regulated
+            </h4>
+            <p className="text-white/70 text-sm">
+              Multi-Region Compliance
+            </p>
+          </motion.div>
 
-            <motion.div
-              variants={{
-                hidden: { opacity: 0, y: -20 },
-                visible: { opacity: 1, y: 0 },
-              }}
-              initial="hidden"
-              whileInView="visible"
-              transition={{ duration: 0.8, delay: 0.4 }}
-              viewport={{ once: true }}
-              className="animate_top text-center"
-            >
-              <h3 className="mb-2.5 text-3xl font-bold text-black dark:text-white xl:text-sectiontitle3">
-                Tier-1
-              </h3>
-              <p className="text-lg lg:text-para2">
-                Broker Partnerships
-              </p>
-            </motion.div>
+          {/* Metric 3 */}
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            viewport={{ once: true }}
+            className="text-center"
+          >
+            <h4 className="mb-2 text-[34px] font-semibold text-cyan-400">
+              Secure
+            </h4>
+            <p className="text-white/70 text-sm">
+              Client Fund Protection
+            </p>
+          </motion.div>
 
-            <motion.div
-              variants={{
-                hidden: { opacity: 0, y: -20 },
-                visible: { opacity: 1, y: 0 },
-              }}
-              initial="hidden"
-              whileInView="visible"
-              transition={{ duration: 0.8, delay: 0.6 }}
-              viewport={{ once: true }}
-              className="animate_top text-center"
-            >
-              <h3 className="mb-2.5 text-3xl font-bold text-black dark:text-white xl:text-sectiontitle3">
-                Regulated
-              </h3>
-              <p className="text-lg lg:text-para2">
-                Multi-Region Compliance
-              </p>
-            </motion.div>
-
-            <motion.div
-              variants={{
-                hidden: { opacity: 0, y: -20 },
-                visible: { opacity: 1, y: 0 },
-              }}
-              initial="hidden"
-              whileInView="visible"
-              transition={{ duration: 0.8, delay: 0.8 }}
-              viewport={{ once: true }}
-              className="animate_top text-center"
-            >
-              <h3 className="mb-2.5 text-3xl font-bold text-black dark:text-white xl:text-sectiontitle3">
-                Secure
-              </h3>
-              <p className="text-lg lg:text-para2">
-                Client Fund Protection
-              </p>
-            </motion.div>
-
-          </div>
         </div>
-      </section>
-      {/* ===== Trust Indicators End ===== */}
-    </>
+      </div>
+    </section>
   );
 };
 

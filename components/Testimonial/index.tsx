@@ -1,21 +1,34 @@
 "use client";
-import SectionHeader from "../Common/SectionHeader";
 
+import SectionHeader from "../Common/SectionHeader";
 import { Autoplay, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
 import { Swiper, SwiperSlide } from "swiper/react";
-
 import { motion } from "framer-motion";
 import SingleTestimonial from "./SingleTestimonial";
 import { testimonialData } from "./testimonialData";
 
 const Testimonial = () => {
   return (
-    <section>
-      <div className="mx-auto max-w-c-1315 px-4 md:px-8 xl:px-0">
-        {/* ===== Section Title ===== */}
-        <div className="animate_top mx-auto text-center">
+    <section
+      className="
+        relative
+        bg-gradient-to-b
+        from-[#020617] via-[#020b2a] to-[#020617]
+        py-24 lg:py-32
+      "
+    >
+      <div className="mx-auto max-w-[1400px] px-4 md:px-8">
+
+        {/* Section Header */}
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          className="mb-16 text-center  mx-auto"
+        >
           <SectionHeader
             headerInfo={{
               title: "CLIENT TESTIMONIALS",
@@ -24,18 +37,16 @@ const Testimonial = () => {
                 "Discover how traders across global markets are achieving consistent results and reclaiming time through InfiAlgo’s algorithmic trading solutions.",
             }}
           />
-        </div>
-      </div>
+        </motion.div>
 
-      <motion.div
-        initial={{ opacity: 0, y: -20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1, delay: 0.1 }}
-        viewport={{ once: true }}
-        className="animate_top mx-auto mt-15 max-w-c-1235 px-4 md:px-8 xl:mt-20 xl:px-0"
-      >
-        {/* ===== Slider ===== */}
-        <div className="swiper testimonial-01 mb-20 pb-22.5">
+        {/* Slider */}
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.1 }}
+          viewport={{ once: true }}
+          className="mt-12"
+        >
           <Swiper
             spaceBetween={40}
             slidesPerView={2}
@@ -49,6 +60,7 @@ const Testimonial = () => {
               0: { slidesPerView: 1 },
               768: { slidesPerView: 2 },
             }}
+            className="pb-20"
           >
             {testimonialData.map((review) => (
               <SwiperSlide key={review.id}>
@@ -56,8 +68,9 @@ const Testimonial = () => {
               </SwiperSlide>
             ))}
           </Swiper>
-        </div>
-      </motion.div>
+        </motion.div>
+
+      </div>
     </section>
   );
 };

@@ -33,9 +33,9 @@ export default function Home() {
       <Feature />
       <ProblemSection />
       <AIWinsSection/>
-      <Brands />
 
        <FunFact />
+      <Brands />
 
 
       {/* <Integration /> */}
