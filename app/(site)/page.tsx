@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import Hero from "@/components/Hero";
+import Hero from "@/components/Hero/HeroSection";
 import Brands from "@/components/Brands";
 import Feature from "@/components/Features";
 import About from "@/components/About";
@@ -11,7 +11,9 @@ import FAQ from "@/components/FAQ";
 import Pricing from "@/components/Pricing";
 import Contact from "@/components/Contact";
 import Blog from "@/components/Blog";
+import ProblemSection from "@/components/Problem";
 import Testimonial from "@/components/Testimonial";
+import AIWinsSection from "@/components/AI";
 
 export const metadata: Metadata = {
   title: " InfiAlgo",
@@ -29,6 +31,8 @@ export default function Home() {
 
       <FeaturesTab />
       <Feature />
+      <ProblemSection />
+      <AIWinsSection/>
       <Brands />
 
        <FunFact />

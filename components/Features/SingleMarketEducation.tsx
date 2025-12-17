@@ -17,38 +17,44 @@ const SingleMarketSection = ({
 }) => {
   return (
     <div
-      className={`flex flex-col items-center gap-10 lg:flex-row ${
+      className={`flex flex-col items-center gap-12 lg:flex-row ${
         reverse ? "lg:flex-row-reverse" : ""
       }`}
     >
-      {/* Image */}
-      <div className="relative h-[350px] w-full overflow-hidden rounded-xl lg:w-1/2">
+      {/* IMAGE CARD */}
+      <div className="relative w-full lg:w-1/2 h-[320px] sm:h-[380px] rounded-2xl overflow-hidden border border-white/10">
         <Image
           src={image}
           alt={title}
           fill
           className="object-cover"
         />
-        <div className="absolute inset-0 bg-black/40" />
-        <h3 className="absolute bottom-6 left-6 text-2xl font-bold text-white">
+
+        {/* Dark overlay */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
+
+        {/* Title */}
+        <h3 className="absolute bottom-6 left-6 text-[22px] sm:text-[26px] font-semibold text-white">
           {title}
         </h3>
       </div>
 
-      {/* Content */}
-      <div className="lg:w-1/2">
-        <p className="mb-6 text-lg text-gray-700 dark:text-gray-300">
+      {/* CONTENT */}
+      <div className="w-full lg:w-1/2">
+        <p className="mb-6 text-[15px] sm:text-[16px] leading-[26px] text-white/70">
           {description}
         </p>
 
-        <ul className="space-y-3">
+        <ul className="space-y-4">
           {points.map((point, index) => (
             <li
               key={index}
-              className="flex items-start gap-3 text-gray-700 dark:text-gray-300"
+              className="flex items-start gap-3 text-white/70"
             >
-              <span className="mt-1 h-2 w-2 rounded-full bg-primary" />
-              {point}
+              <span className="mt-2 h-2 w-2 rounded-full bg-cyan-400 shrink-0" />
+              <span className="text-[14px] sm:text-[15px] leading-[24px]">
+                {point}
+              </span>
             </li>
           ))}
         </ul>

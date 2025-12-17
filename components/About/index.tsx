@@ -6,105 +6,86 @@ import Image from "next/image";
 const About = () => {
   return (
     <>
-      {/* ===== About Start ===== */}
-      <section className="overflow-hidden pb-20 lg:pb-25 lg:pt-25 xl:pb-30 xl:pt-30">
-        <div className="mx-auto max-w-c-1235 px-4 md:px-8 xl:px-0">
-          <div className="flex items-center gap-8 lg:gap-32.5">
-            {/* Image */}
+      {/* ===== ABOUT START ===== */}
+      <section className="relative bg-gradient-to-b from-[#020617] via-[#020b2a] to-[#020617] py-24 lg:py-32">
+        <div className="mx-auto max-w-[1400px] px-4 sm:px-6">
+
+          <div className="flex flex-col items-center gap-14 lg:flex-row lg:gap-24">
+
+            {/* IMAGE */}
             <motion.div
-              variants={{
-                hidden: { opacity: 0, x: -20 },
-                visible: { opacity: 1, x: 0 },
-              }}
-              initial="hidden"
-              whileInView="visible"
-              transition={{ duration: 0.5, delay: 0.1 }}
+              initial={{ opacity: 0, x: -24 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6 }}
               viewport={{ once: true }}
-              className="animate_left relative mx-auto hidden aspect-[588/526.5] md:block md:w-1/2"
+              className="relative hidden md:block w-full lg:w-1/2 aspect-[588/526] rounded-2xl overflow-hidden border border-white/10"
             >
               <Image
-                src="/images/about/robo.png"
+                src="/images/robo/about_1.png"
                 alt="About InfiAlgo"
-                className="dark:hidden"
                 fill
-              />
-              <Image
-                src="/images/about/robo.png"
-                alt="About InfiAlgo"
-                className="hidden dark:block"
-                fill
+                className="object-cover"
               />
             </motion.div>
 
-            {/* Content */}
+            {/* CONTENT */}
             <motion.div
-              variants={{
-                hidden: { opacity: 0, x: 20 },
-                visible: { opacity: 1, x: 0 },
-              }}
-              initial="hidden"
-              whileInView="visible"
-              transition={{ duration: 0.5, delay: 0.1 }}
+              initial={{ opacity: 0, x: 24 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6 }}
               viewport={{ once: true }}
-              className="animate_right md:w-1/2"
+              className="w-full lg:w-1/2"
             >
-            <div className="mb-4 flex items-center gap-3">
-  <span className="h-[1px] w-10 bg-primary"></span>
-  <span className="text-sm font-semibold uppercase tracking-wider text-primary">
-    About InfiAlgo
-  </span>
-</div>
+              {/* Section label */}
+              <div className="mb-4 flex items-center gap-3">
+                <span className="h-[1px] w-10 bg-cyan-400" />
+                <span className="text-xs font-semibold uppercase tracking-wider text-cyan-400">
+                  About InfiAlgo
+                </span>
+              </div>
 
-
-              <h2 className="relative mb-6 text-3xl font-bold text-black dark:text-white xl:text-3xl">
+              <h2 className="mb-6 text-[28px] sm:text-[34px] font-semibold text-white leading-tight">
                 Building Financial Success Through{" "}
-                <span className="relative inline-block before:absolute before:bottom-2.5 before:left-0 before:-z-1 before:h-3 before:w-full before:bg-titlebg dark:before:bg-titlebgdark">
+                <span className="text-cyan-400">
                   Technology & Expertise
                 </span>
               </h2>
 
-              <p>
+              <p className="mb-10 text-[15px] sm:text-[16px] leading-[26px] text-white/70">
                 Since our inception, InfiAlgo has stood at the intersection of
                 financial markets expertise and cutting-edge technology. Our
-                proprietary algorithms, developed through years of market
-                research and backtesting, combine mathematical precision with
-                deep market understanding to deliver consistent trading
-                performance.
+                proprietary algorithms combine mathematical precision with deep
+                market understanding to deliver consistent trading performance.
               </p>
 
-              {/* Feature 01 */}
-              <div className="mt-7.5 flex items-center gap-5">
-                <div className="flex h-15 w-15 items-center justify-center rounded-[50%] border border-stroke dark:border-strokedark dark:bg-blacksection">
-                  <p className="text-metatitle2 font-semibold text-black dark:text-white">
-                    01
-                  </p>
+              {/* FEATURE 01 */}
+              <div className="flex items-start gap-5 mb-8">
+                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-white/20 text-white font-semibold">
+                  01
                 </div>
-                <div className="w-3/4">
-                  <h3 className="mb-0.5 text-metatitle2 text-black dark:text-white">
+                <div>
+                  <h3 className="mb-1 text-white font-medium">
                     Institutional-Grade Trading Algorithms
                   </h3>
-                  <p>
+                  <p className="text-white/70 text-sm leading-[22px]">
                     Quantitative models refined through extensive historical
                     testing across Forex, Comex, and US equity markets.
                   </p>
                 </div>
               </div>
 
-              {/* Feature 02 */}
-              <div className="mt-7.5 flex items-center gap-5">
-                <div className="flex h-15 w-15 items-center justify-center rounded-[50%] border border-stroke dark:border-strokedark dark:bg-blacksection">
-                  <p className="text-metatitle2 font-semibold text-black dark:text-white">
-                    02
-                  </p>
+              {/* FEATURE 02 */}
+              <div className="flex items-start gap-5">
+                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-white/20 text-white font-semibold">
+                  02
                 </div>
-                <div className="w-3/4">
-                  <h3 className="mb-0.5 text-metatitle2 text-black dark:text-white">
+                <div>
+                  <h3 className="mb-1 text-white font-medium">
                     Transparency & Trader Education
                   </h3>
-                  <p>
+                  <p className="text-white/70 text-sm leading-[22px]">
                     We empower traders with strategic insights, risk frameworks,
-                    and the technological tools needed to navigate complex
-                    global markets.
+                    and advanced tools needed to navigate global markets.
                   </p>
                 </div>
               </div>
@@ -112,92 +93,75 @@ const About = () => {
           </div>
         </div>
       </section>
-      {/* ===== About End ===== */}
 
-      {/* ===== About Two Start ===== */}
-      <section>
-        <div className="mx-auto max-w-c-1235 overflow-hidden px-4 md:px-8 2xl:px-0">
-          <div className="flex items-center gap-8 lg:gap-32.5">
-            {/* Content */}
+
+      {/* ===== ABOUT TWO START ===== */}
+      <section className="relative bg-gradient-to-b from-[#020617] via-[#020b2a] to-[#020617] py-24 lg:py-32">
+        <div className="mx-auto max-w-[1400px] px-4 sm:px-6">
+
+          <div className="flex flex-col-reverse items-center gap-14 lg:flex-row lg:gap-24">
+
+            {/* CONTENT */}
             <motion.div
-              variants={{
-                hidden: { opacity: 0, x: -20 },
-                visible: { opacity: 1, x: 0 },
-              }}
-              initial="hidden"
-              whileInView="visible"
-              transition={{ duration: 1, delay: 0.1 }}
+              initial={{ opacity: 0, x: -24 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6 }}
               viewport={{ once: true }}
-              className="animate_left md:w-1/2"
+              className="w-full lg:w-1/2"
             >
-              <h4 className="font-medium uppercase text-black dark:text-white">
+              <span className="text-xs uppercase tracking-wider text-cyan-400 font-semibold">
                 Built for Serious Traders
-              </h4>
+              </span>
 
-              <h2 className="relative mb-6 text-3xl font-bold text-black dark:text-white xl:text-3xl">
+              <h2 className="mt-3 mb-6 text-[28px] sm:text-[34px] font-semibold text-white leading-tight">
                 Engineered for{" "}
-                <span className="relative inline-block before:absolute before:bottom-2.5 before:left-0 before:-z-1 before:h-3 before:w-full before:bg-titlebg2 dark:before:bg-titlebgdark">
+                <span className="text-cyan-400">
                   Performance & Reliability
                 </span>
               </h2>
 
-              <p>
+              <p className="mb-8 text-[15px] sm:text-[16px] leading-[26px] text-white/70">
                 Every algorithm we deploy undergoes rigorous testing across
-                diverse market conditions before reaching your trading account.
-                Hosted on enterprise-grade cloud infrastructure with redundant
-                systems, our platforms maintain the speed and reliability that
-                professional trading demands.
+                diverse market conditions. Hosted on enterprise-grade cloud
+                infrastructure, our systems deliver speed and reliability that
+                professional traders demand.
               </p>
 
-              <div>
-                <a
-                  href="#"
-                  className="group mt-7.5 inline-flex items-center gap-2.5 text-black hover:text-primary dark:text-white dark:hover:text-primary"
+              <a
+                href="#"
+                className="inline-flex items-center gap-2 text-sm font-medium text-cyan-400 hover:text-cyan-300 transition"
+              >
+                Learn More About Our Approach
+                <svg
+                  width="14"
+                  height="14"
+                  viewBox="0 0 14 14"
+                  fill="currentColor"
                 >
-                  <span className="duration-300 group-hover:pr-2">
-                    Learn More About Our Approach
-                  </span>
-                  <svg
-                    width="14"
-                    height="14"
-                    viewBox="0 0 14 14"
-                    fill="currentColor"
-                  >
-                    <path d="M10.4767 6.16701L6.00668 1.69701L7.18501 0.518677L13.6667 7.00034L7.18501 13.482L6.00668 12.3037L10.4767 7.83368H0.333344V6.16701H10.4767Z" />
-                  </svg>
-                </a>
-              </div>
+                  <path d="M10.4767 6.16701L6.00668 1.69701L7.18501 0.518677L13.6667 7.00034L7.18501 13.482L6.00668 12.3037L10.4767 7.83368H0.333344V6.16701H10.4767Z" />
+                </svg>
+              </a>
             </motion.div>
 
-            {/* Image */}
+            {/* IMAGE */}
             <motion.div
-              variants={{
-                hidden: { opacity: 0, x: 20 },
-                visible: { opacity: 1, x: 0 },
-              }}
-              initial="hidden"
-              whileInView="visible"
-              transition={{ duration: 1, delay: 0.1 }}
+              initial={{ opacity: 0, x: 24 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6 }}
               viewport={{ once: true }}
-              className="animate_right relative mx-auto hidden aspect-[588/526.5] md:block md:w-1/2"
+              className="relative hidden md:block w-full lg:w-1/2 aspect-[588/526] rounded-2xl overflow-hidden border border-white/10"
             >
               <Image
-                src="/images/about/1.webp"
+                src="/images/robo/about_2.png"
                 alt="InfiAlgo Platform"
-                className="dark:hidden"
                 fill
-              />
-              <Image
-                src="/images/about/1.webp"
-                alt="InfiAlgo Platform"
-                className="hidden dark:block"
-                fill
+                className="object-cover"
               />
             </motion.div>
           </div>
         </div>
       </section>
-      {/* ===== About Two End ===== */}
+      {/* ===== ABOUT TWO END ===== */}
     </>
   );
 };

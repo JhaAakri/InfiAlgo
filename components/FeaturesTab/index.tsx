@@ -1,5 +1,5 @@
 "use client";
-import Image from "next/image";
+
 import { useState } from "react";
 import FeaturesTabItem from "./FeaturesTabItem";
 import featuresTabData from "./featuresTabData";
@@ -9,40 +9,24 @@ const FeaturesTab = () => {
   const [currentTab, setCurrentTab] = useState("tabOne");
 
   return (
-    <section className="relative pb-20 pt-18.5 lg:pb-22.5">
-      <div className="relative mx-auto max-w-c-1390 px-4 md:px-8 2xl:px-0">
-
-        {/* Background Shape */}
-        <div className="absolute -top-16 -z-1 mx-auto h-[350px] w-[90%]">
-          <Image
-            fill
-            className="dark:hidden"
-            src="/images/shape/shape-dotted-light.svg"
-            alt="Dotted Shape"
-          />
-          <Image
-            fill
-            className="hidden dark:block"
-            src="/images/shape/shape-dotted-dark.svg"
-            alt="Dotted Shape"
-          />
-        </div>
+    <section className="relative bg-gradient-to-b from-[#020617] to-[#020b2a] pt-24 sm:pt-28 pb-20 sm:pb-24">
+      <div className="relative mx-auto max-w-[1400px] px-4 sm:px-6">
 
         {/* Heading */}
         <motion.div
-          initial={{ opacity: 0, y: -20 }}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
+          transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="mx-auto mb-16 max-w-4xl text-center"
+          className="mx-auto mb-14 sm:mb-16 max-w-[780px] text-center"
         >
-          <h1 className="mb-3 text-4xl font-extrabold text-black dark:text-white sm:text-5xl xl:text-6xl">
+          <h1 className="mb-3 text-[32px] sm:text-[40px] md:text-[48px] font-semibold text-white">
             Services
           </h1>
-          <h2 className="mb-6 text-2xl font-bold text-black dark:text-white xl:text-hero">
+          <h2 className="mb-5 text-[20px] sm:text-[22px] md:text-[28px] font-semibold text-white">
             Three Tiers of Trading Excellence
           </h2>
-          <p className="text-lg text-gray-600 dark:text-gray-300">
+          <p className="text-[15px] sm:text-[16px] leading-[24px] sm:leading-[26px] text-white/70">
             Modern markets require modern solutions. We’ve designed three
             distinct service levels to match your trading goals, capital
             requirements, and experience level.
@@ -50,20 +34,35 @@ const FeaturesTab = () => {
         </motion.div>
 
         {/* Tabs */}
-        <div className="mb-15 flex justify-center rounded-[10px] border bg-white dark:bg-blacksection">
-          {featuresTabData.map((tab, index) => (
-            <button
-              key={tab.id}
-              onClick={() => setCurrentTab(tab.id)}
-              className={`px-8 py-4 font-medium ${
-                currentTab === tab.id
-                  ? "border-b-2 border-primary text-primary"
-                  : "text-black dark:text-white"
-              }`}
-            >
-              {index + 1}. {tab.title.split("—")[0]}
-            </button>
-          ))}
+        <div className="mb-14 sm:mb-16">
+          <div className="flex justify-center">
+            <div className="flex flex-wrap justify-center gap-2 sm:gap-3 rounded-full border border-white/10 bg-white/5 backdrop-blur-md p-2">
+              {featuresTabData.map((tab, index) => (
+                <button
+                  key={tab.id}
+                  onClick={() => setCurrentTab(tab.id)}
+                  className={`
+                    relative
+                    px-4 py-2.5
+                    sm:px-5 sm:py-3
+                    lg:px-7 lg:py-3
+                    text-xs sm:text-sm
+                    font-medium
+                    rounded-full
+                    whitespace-nowrap
+                    transition-all duration-300
+                    ${
+                      currentTab === tab.id
+                        ? "text-black bg-gradient-to-r from-cyan-400 to-blue-500 shadow-[0_0_20px_rgba(56,189,248,0.6)]"
+                        : "text-white/70 hover:text-white"
+                    }
+                  `}
+                >
+                  {index + 1}. {tab.title}
+                </button>
+              ))}
+            </div>
+          </div>
         </div>
 
         {/* Content */}

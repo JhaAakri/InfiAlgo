@@ -9,6 +9,11 @@ module.exports = {
       animation: {
         marquee: "marquee 25s linear infinite",
       },
+      fontFamily: {
+  serif: ["Playfair Display", "serif"],
+  sans: ["Inter", "sans-serif"],
+},
+
       keyframes: {
         marquee: {
           "0%": { transform: "translateX(0%)" },

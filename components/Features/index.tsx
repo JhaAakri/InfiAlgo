@@ -6,8 +6,8 @@ import { marketEducationData } from "./marketEducationData";
 
 const MarketEducation = () => {
   return (
-    <section className="py-20 lg:py-28">
-      <div className="mx-auto max-w-c-1315 px-4 md:px-8 xl:px-0">
+    <section className="relative bg-gradient-to-b from-[#020617] via-[#020b2a] to-[#020617] py-24 lg:py-32">
+      <div className="mx-auto max-w-[1400px] px-4 sm:px-6">
 
         <SectionHeader
           headerInfo={{
@@ -16,9 +16,10 @@ const MarketEducation = () => {
             description:
               "Each market behaves differently. Our algorithms are designed with deep structural knowledge of Forex, Commodities, and US equity markets.",
           }}
+          
         />
 
-        <div className="mt-16 space-y-20">
+        <div className="mt-20 space-y-20">
           {marketEducationData.map((market, index) => (
             <SingleMarketSection
               key={market.id}
