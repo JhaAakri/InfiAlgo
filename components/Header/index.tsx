@@ -37,10 +37,16 @@ const Header = () => {
           }
         `}
       >
-        {/* Inner glow */}
-        <div className="pointer-events-none absolute inset-0 -z-10 rounded-full
-          bg-gradient-to-r from-cyan-400/15 via-blue-500/15 to-cyan-400/15
-          blur-2xl"
+        {/* Inner Glow */}
+        <div
+          className="
+            pointer-events-none
+            absolute inset-0 -z-10
+            rounded-full
+            bg-gradient-to-r
+            from-cyan-400/15 via-blue-500/15 to-cyan-400/15
+            blur-2xl
+          "
         />
 
         {/* TOP BAR */}
@@ -63,7 +69,8 @@ const Header = () => {
               <Link
                 key={menu.id}
                 href={menu.path}
-                className={`text-sm transition
+                className={`
+                  text-sm transition
                   ${
                     pathUrl === menu.path
                       ? "text-cyan-400"
@@ -94,7 +101,7 @@ const Header = () => {
               Start Trading
             </Link>
 
-            {/* Mobile Menu Button */}
+            {/* MOBILE TOGGLE */}
             <button
               onClick={() => setMenuOpen(!menuOpen)}
               className="md:hidden flex h-9 w-9 items-center justify-center rounded-full border border-white/20 text-white"
@@ -113,7 +120,8 @@ const Header = () => {
                   key={menu.id}
                   href={menu.path}
                   onClick={() => setMenuOpen(false)}
-                  className={`text-sm
+                  className={`
+                    text-sm
                     ${
                       pathUrl === menu.path
                         ? "text-cyan-400"

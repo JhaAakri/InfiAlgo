@@ -6,6 +6,7 @@ import Lines from "@/components/Lines";
 import ScrollToTop from "@/components/ScrollToTop";
 import { ThemeProvider } from "next-themes";
 import ToasterContext from "../context/ToastContext";
+import WhatsAppButton from "@/components/Common/WhatsAppButton";
 
 export default function ClientLayout({
     children,
@@ -24,6 +25,7 @@ export default function ClientLayout({
             {children}
             <Footer />
             <ScrollToTop />
+            <WhatsAppButton/>
         </ThemeProvider>
     );
 }
