@@ -85,8 +85,8 @@ const Header = () => {
 
           {/* CTA + MOBILE TOGGLE */}
           <div className="flex items-center gap-3">
-            <Link
-              href="#"
+            <Link href="/auth/signin"
+
               className="
                 rounded-full
                 bg-gradient-to-r from-cyan-400 to-blue-500
@@ -98,7 +98,7 @@ const Header = () => {
                 transition
               "
             >
-              Start Trading
+              Login
             </Link>
 
             {/* MOBILE TOGGLE */}
