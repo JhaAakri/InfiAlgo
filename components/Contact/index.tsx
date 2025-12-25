@@ -7,7 +7,13 @@ const Contact = () => {
   return (
     <section
       id="support"
-      className="relative overflow-hidden bg-gradient-to-b from-[#020617] to-[#020b2a] px-20 py-24 sm:py-28"
+      className="
+        relative overflow-hidden
+        bg-gradient-to-b from-[#020617] to-[#020b2a]
+        pt-[180px] pb-24
+        px-6 sm:px-10 lg:px-20
+        scroll-mt-[180px]
+      "
     >
       {/* Glow */}
       <div className="pointer-events-none absolute inset-0 flex justify-center">
@@ -68,22 +74,21 @@ const Contact = () => {
                 className="input-ai resize-none"
               />
 
-             <button
-  type="submit"
-  className="
-    inline-flex items-center justify-center
-    rounded-full
-    bg-gradient-to-r from-cyan-400 to-blue-500
-    px-7 py-3
-    text-sm font-medium text-black
-    shadow-[0_0_20px_rgba(56,189,248,0.6)]
-    hover:shadow-[0_0_30px_rgba(56,189,248,0.9)]
-    transition
-  "
->
-  Send Message
-</button>
-
+              <button
+                type="submit"
+                className="
+                  inline-flex items-center justify-center
+                  rounded-full
+                  bg-gradient-to-r from-cyan-400 to-blue-500
+                  px-7 py-3
+                  text-sm font-medium text-black
+                  shadow-[0_0_20px_rgba(56,189,248,0.6)]
+                  hover:shadow-[0_0_30px_rgba(56,189,248,0.9)]
+                  transition
+                "
+              >
+                Send Message
+              </button>
             </form>
           </motion.div>
 
@@ -143,8 +148,6 @@ const Contact = () => {
 
         </div>
       </div>
-
-     
     </section>
   );
 };
