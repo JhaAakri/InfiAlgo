@@ -107,7 +107,7 @@ export default function PrivacyPolicyPage() {
               Privacy Policy
             </h1>
             <p className="text-white/70 max-w-2xl leading-[30px]">
-              At <strong className="text-white">My Bursa Watch</strong>, we
+              At <strong className="text-white">InfiAlgo</strong>, we
               deeply respect and uphold the right to privacy of every
               individual associated with us.
             </p>
